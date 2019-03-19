@@ -1,13 +1,11 @@
 <component name="ArtifactManager">
-  <artifact name="downloader:jar">
-    <output-path>$PROJECT_DIR$/../artifacts/</output-path>
-    <root id="root">
-      <element id="archive" name="downloader.jar">
-        <element id="directory" name="META-INF">
-          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-        </element>
-        <element id="module-output" name="downloader_main" />
+  <artifact type="jar" name="downloader:jar">
+    <output-path>$PROJECT_DIR$/artifacts/</output-path>
+    <root id="archive" name="downloader.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       </element>
+      <element id="module-output" name="downloader_main" />
     </root>
   </artifact>
 </component>
