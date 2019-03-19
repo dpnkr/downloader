@@ -7,24 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0200e085-3143-46af-ba9c-12aee8b953ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/downloader_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/downloader_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/applications/downloader/download/Joiner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/applications/downloader/download/Joiner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/downloader-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/downloader-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/applications/downloader/download/Joiner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/applications/downloader/download/Joiner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/applications/downloader/download/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/applications/downloader/download/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/Joiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/Joiner.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -100,7 +82,7 @@
           <entry key="class" value="13" />
           <entry key="gradle" value="3" />
           <entry key="gradlew" value="1" />
-          <entry key="java" value="924" />
+          <entry key="java" value="940" />
           <entry key="jpg" value="5" />
           <entry key="prop" value="2" />
           <entry key="txt" value="2" />
@@ -113,7 +95,7 @@
           <entry key="CLASS" value="13" />
           <entry key="Groovy" value="3" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="924" />
+          <entry key="JAVA" value="940" />
           <entry key="Manifest" value="7" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="2" />
@@ -122,13 +104,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="20382" />
+          <entry key="java" value="20408" />
           <entry key="prop" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="20382" />
+          <entry key="JAVA" value="20408" />
           <entry key="Properties" value="31" />
         </counts>
       </usages-collector>
@@ -208,7 +190,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/applications/downloader/Executor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
@@ -220,11 +202,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/applications/downloader/download/Part.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="42">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -627,10 +609,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/Progress.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/TaskManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/DownloadTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/Manager.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/Joiner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/applications/downloader/download/DownloadTask.java" />
       </list>
     </option>
   </component>
@@ -1175,6 +1157,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/applications/downloader/download/DownloadContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1313,13 +1302,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
