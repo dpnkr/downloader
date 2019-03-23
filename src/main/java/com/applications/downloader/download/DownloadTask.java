@@ -10,12 +10,13 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.util.concurrent.CountDownLatch;
 
-public class DownloadTask implements Runnable {
+public class DownloadTask implements Runnable, Constants {
 
     private FileChannel oc;
     private Part part;
     private CountDownLatch latch;
     private Agent agent;
+    private long offset = 0;
 
     DownloadTask(DownloadContext ctx) {
         this.oc = ctx.getWriteChannel();
@@ -26,8 +27,9 @@ public class DownloadTask implements Runnable {
 
     private ReadableByteChannel getReadChannel() throws IOException {
         int rc = agent.sendRequest();
-        if (rc == Constants.PARTIAL_RESPONSE_CODE) {
-            System.out.println("response code for connection[" + part.getNo() + "] : " + rc);
+        if (rc == PARTIAL_RESPONSE_CODE) {
+            System.out.println("    task[" + part.getNo() + "] = success");
+//            System.out.println("response code for connection[" + part.getNo() + "] : " + rc);
             InputStream stream = agent.getInputStream();
             return Channels.newChannel(stream);
         } else {
@@ -35,16 +37,28 @@ public class DownloadTask implements Runnable {
         }
     }
 
+    double getProgress() {
+        return (double) offset;
+    }
+
+    private void setProgress(long offset) {
+        this.offset = offset;
+    }
+
     @Override
     public void run() {
         try (ReadableByteChannel ic = getReadChannel()) {
             long count = (part.getEnd() - part.getStart()) + 1L;
+            long chunk = count / CHUNK_COUNT;
+            long readCount;
             while (count != 0) {
-                count -= oc.transferFrom(ic, 0, count);
+                readCount = oc.transferFrom(ic, offset, chunk);
+                offset += readCount;
+                count -= readCount;
+                setProgress(offset);
             }
         } catch (IOException e) {
-            System.out.println("task" + part.getNo() + " [failed]");
-            e.printStackTrace();
+            System.out.println(" task" + part.getNo() + " [failed]. Reason : " + e.getMessage());
         } finally {
             try {
                 oc.close();
@@ -53,6 +67,5 @@ public class DownloadTask implements Runnable {
             }
             latch.countDown();
         }
-        System.out.println("part" + part.getNo() + " > [completed]");
     }
 }

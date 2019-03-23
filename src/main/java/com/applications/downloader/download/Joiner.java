@@ -16,31 +16,32 @@ public class Joiner implements Callable<File> {
 
     @Override
     public File call() throws IOException {
-        long size = f1.length();
-        FileChannel from = new FileInputStream(f2).getChannel();
-        FileChannel to = new FileOutputStream(f1).getChannel();
-        to.position(size);
-        transfer(from, to);
+
+        File f3 = new File(f1.getParent() + File.separator + f1.getName() + ".join");
+
+        FileChannel from1 = new FileInputStream(f1).getChannel();
+        FileChannel from2 = new FileInputStream(f2).getChannel();
+
+        FileChannel to = new FileOutputStream(f3).getChannel();
+
+        transfer(from1, to);
+        to.position(from1.size());
+        transfer(from2, to);
+
+        from1.close();
+        from2.close();
+        to.close();
+
+        f1.deleteOnExit();
         f2.deleteOnExit();
-        return f1;
+
+        return f3;
     }
 
-    private void transfer(FileChannel from, FileChannel to) {
-        long count;
-        try {
-            count = from.size();
-            while (count != 0) {
-                count -= from.transferTo(0, count, to);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                from.close();
-                to.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private void transfer(FileChannel from, FileChannel to) throws IOException {
+        long count = from.size();
+        while (count != 0) {
+            count -= from.transferTo(0, count, to);
         }
     }
 }

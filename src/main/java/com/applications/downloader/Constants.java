@@ -11,4 +11,6 @@ public interface Constants {
     int PARTIAL_RESPONSE_CODE = 206;
     String HTTP = "http";
     String HTTPS = "https";
+    int PARTIAL_COUNT = 16;
+    int CHUNK_COUNT = 100;
 }

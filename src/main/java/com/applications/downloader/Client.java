@@ -15,9 +15,9 @@ public class Client {
 //        System.out.println("Enter file location : ");
 //        String filePath = br.readLine();
 
-        Executor executor = new Executor();
-        executor.execute("https://speed.hetzner.de/100MB.bin",
-                Constants.TEST_OUTPUT_LOCATION, true, 16);
+        Executor executor = new Executor("https://eee.eaoe.cc/5aadb04632948d1bf0239b831831c831/kXYiU_JCYtU",
+                Constants.TEST_OUTPUT_LOCATION, true, Constants.PARTIAL_COUNT);
+        executor.execute();
 
     }
 }

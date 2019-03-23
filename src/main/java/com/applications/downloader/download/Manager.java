@@ -12,6 +12,7 @@ public class Manager {
 
     private InputContext ctx;
     private boolean spd = false;
+    private long contentLength;
 
     public Manager(InputContext ctx) {
         this.ctx = ctx;
@@ -33,7 +34,8 @@ public class Manager {
                 calculateParts(1, getContentLength());
         ResourceProvider rv = new ResourceProvider(ctx.getUrlPath(), ctx.getOutputPath(), parts);
         TaskManager manager = new TaskManager();
-        manager.addWriteTasks(rv.getDownloadContexts());
+        manager.addDownloadTasks(rv.getDownloadContexts());
+        manager.runProgress(contentLength);
         manager.waitForCompletion();
         manager.setFinalFileName(rv.getFinalFileName());
         manager.addJoinTasks(rv.getFiles(), ctx.getNoParts());
@@ -56,7 +58,7 @@ public class Manager {
         if (length == null) {
             throw new IOException("Content-Length header not present.");
         }
-        return Long.parseLong(length);
+        return contentLength = Long.parseLong(length);
     }
 
     private Part[] calculateParts(int count, long contentLength) {

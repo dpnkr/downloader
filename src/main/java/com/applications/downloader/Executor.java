@@ -9,8 +9,20 @@ import java.util.concurrent.ExecutionException;
 
 public class Executor {
 
-    public void execute(String url, String filePath, boolean inParts, int noParts)
-            throws IOException, InterruptedException, ExecutionException, UnsupportedProtocol {
+    private String url;
+    private String filePath;
+    private boolean inParts;
+    private int noParts;
+
+    public Executor(String url, String filePath, boolean inParts, int noParts) {
+        this.url = url;
+        this.filePath = filePath;
+        this.inParts = inParts;
+        this.noParts = noParts;
+    }
+
+    public void execute() throws IOException, InterruptedException, ExecutionException,
+            UnsupportedProtocol {
 
         InputContext inputContext = new InputContext();
         inputContext.setUrlPath(url);

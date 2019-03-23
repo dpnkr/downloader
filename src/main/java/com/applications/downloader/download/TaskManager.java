@@ -6,25 +6,31 @@ import java.util.List;
 import java.util.concurrent.*;
 
 class TaskManager {
-
     private ExecutorService service;
+
     private CountDownLatch latch;
     private String finalFileName;
+
+    private DownloadTask tasks[];
 
     TaskManager() {
         service = Executors.newCachedThreadPool(new TaskFactory());
     }
 
-    void addWriteTasks(DownloadContext contexts[]) {
+    void addDownloadTasks(DownloadContext contexts[]) {
         latch = new CountDownLatch(contexts.length);
-        for (DownloadContext context : contexts) {
-            context.setLatch(latch);
-            service.execute(new DownloadTask(context));
+        tasks = new DownloadTask[contexts.length];
+        for (int i = 0; i < contexts.length; i++) {
+            contexts[i].setLatch(latch);
+            run(tasks[i] = new DownloadTask(contexts[i]));
         }
     }
 
+    private void run(Runnable task) {
+        service.execute(task);
+    }
+
     void waitForCompletion() throws InterruptedException {
-        System.out.println("downloading.... ");
         latch.await();
     }
 
@@ -32,8 +38,12 @@ class TaskManager {
             ExecutionException {
         if (count == 1) {
             File file = new File(finalFileName);
-            boolean b = files[0].renameTo(file);
-            System.out.println("rename : " + b);
+            boolean renamed = files[0].renameTo(file);
+            if (!renamed) {
+                System.out.println("                                 File exists !");
+            } else {
+                System.out.println("                                 success");
+            }
             if (files[0].exists()) {
                 files[0].deleteOnExit();
             }
@@ -56,5 +66,10 @@ class TaskManager {
 
     void setFinalFileName(String finalFileName) {
         this.finalFileName = finalFileName;
+    }
+
+    void runProgress(long contentLength) {
+        Progress progress = new Progress(tasks, contentLength);
+        run(progress);
     }
 }
